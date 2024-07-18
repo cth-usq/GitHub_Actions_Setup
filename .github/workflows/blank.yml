@@ -1,4 +1,5 @@
-name: ${{ github.actor }}'s Workflow
+name: CI
+run-name: ${{ github.actor }}'s Workflow
 
 env: 
   GITHUB_ACTIONS: MyENV
