@@ -1,31 +1,31 @@
-name: CI
-run-name: ${{ github.actor }}'s Workflow
+# name: CI
+# run-name: ${{ github.actor }}'s Workflow
 
-env: 
-  GITHUB_ACTIONS: MyENV
+# env:
+#   GITHUB_ACTIONS: MyENV
 
-on:
-  pull_request:
-    branches: [ "main" ]
+# on:
+#   pull_request:
+#     branches: [ "main" ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  github-task-job:
-    runs-on: ubuntu-latest
+# # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# jobs:
+#   github-task-job:
+#     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    - name: Display GITHUB_ACTIONS environment variable
-      run: echo "GITHUB_ACTIONS environment variable is ${{ env.GITHUB_ACTIONS }}"
-    
-    - name: Show branch and repository name
-      run: |
-        echo "Branch: ${{ github.head_ref }}"
-        echo "Repository: ${{ github.repository }}"
-        
-    - name: Show triggering event
-      run: echo "This workflow was triggered by a ${{ github.event_name }} event"
+    # steps:
+    # - name: Display GITHUB_ACTIONS environment variable
+    #   run: echo "GITHUB_ACTIONS environment variable is ${{ env.GITHUB_ACTIONS }}"
 
-    - run: echo "Job status - ${{ job.status }}"
+    # - name: Show branch and repository name
+    #   run: |
+    #     echo "Branch: ${{ github.head_ref }}"
+    #     echo "Repository: ${{ github.repository }}"
+
+    # - name: Show triggering event
+    #   run: echo "This workflow was triggered by a ${{ github.event_name }} event"
+
+    # - run: echo "Job status - ${{ job.status }}"
 
 
