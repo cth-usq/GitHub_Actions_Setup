@@ -7,9 +7,25 @@ on:
   pull_request:
     branches: ["main"]
 
+env:
+  PYTHON_VERSION: 3.8
+
 jobs:
   python_ci:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./src
+
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      name: Setup Python ${{ env.PYTHON_VERSION }}
+      with:
+        python-version: '${{ env.PYTHON_VERSION }}'
+
+    - name: Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requiremetns.txt
